@@ -1,4 +1,5 @@
 package ifsc.poo.domain;
 
-public class Ponto {
+public class Controle {
+
 }
