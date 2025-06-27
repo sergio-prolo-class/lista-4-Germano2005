@@ -1,4 +1,4 @@
-package ifsc.poo.domain;
+package ifsc.poo.domain.controllers;
 
 public interface Relatorio {
 
