@@ -106,8 +106,21 @@ classDiagram
         PRETO
     }
 
+class DrawListner {
+        <<interface>>
+        +mousePressed()
+        +mouseDragged()
+        +mouseReleased()
+        +mouseClicked()
+        +keyTyped()
+        +keyPressed()
+        +keyReleased()
+        +update()
+    }
+
     App --> GerenciadorGUI
     GerenciadorGUI --> Figura
+    GerenciadorGUI <|.. DrawListner
     Figura <|.. FiguraBase
     FiguraBase <|-- Circulo
     FiguraBase <|-- Quadrado
