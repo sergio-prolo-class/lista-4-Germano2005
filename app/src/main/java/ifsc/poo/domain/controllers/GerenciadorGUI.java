@@ -10,7 +10,7 @@ import java.util.List;
 
 public class GerenciadorGUI implements DrawListener {
     private final Draw draw;
-    private final List<FormaGeometrica> figuras;
+    private final List<FormaGeometrica> figuras; //Uso do Polimorfismo
     private Cor corAtual;
     private boolean preenchido;
     private int tamanhoAtual;
@@ -46,7 +46,7 @@ public class GerenciadorGUI implements DrawListener {
         draw.clear(Draw.WHITE);
 
         for (FormaGeometrica figura : figuras) {
-            figura.desenhar(draw);
+            figura.desenhar(draw);//Uso de polimorfismo
         }
 
         draw.setPenColor(Draw.BLACK);
@@ -80,6 +80,7 @@ public class GerenciadorGUI implements DrawListener {
     }
 
     private FormaGeometrica criarFigura(double x, double y) {
+        // Adição de figuras de tipos diferentes. Outro caso de polimorfismo
         return switch (figuraAtual) {
             case 1 -> new Quadrado(x, y, tamanhoAtual, corAtual, preenchido);
             case 2 -> new Pentagono(x, y, tamanhoAtual, corAtual, preenchido);
@@ -139,7 +140,7 @@ public class GerenciadorGUI implements DrawListener {
 
     private void moverTodasFiguras(int dx, int dy) {
         for (FormaGeometrica f : figuras) {
-            f.mover(dx, dy);
+            f.mover(dx, dy); //Uso de polimorfismo
         }
         System.out.println("Figuras movidas: dx=" + dx + ", dy=" + dy);
     }
@@ -150,8 +151,8 @@ public class GerenciadorGUI implements DrawListener {
         double somaAreas = 0;
 
         for (FormaGeometrica f : figuras) {
-            somaPerimetros += f.calcularPerimetro();
-            somaAreas += f.calcularArea();
+            somaPerimetros += f.calcularPerimetro(); //Uso de polimorfismo
+            somaAreas += f.calcularArea(); //Uso de polimorfismo
         }
 
         System.out.println("\n=== Estatísticas das Figuras ===");

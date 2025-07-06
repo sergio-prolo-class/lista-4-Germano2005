@@ -5,9 +5,9 @@ import ifsc.poo.domain.enums.Cor;
 
 public interface FormaGeometrica {
     void desenhar(Draw draw);
-    double calcularArea();
-    double calcularPerimetro();
-    void mover(int dx, int dy);
+    double calcularArea(); //Método que faz o uso do conceito de polimorfismo
+    double calcularPerimetro(); //Método que faz o uso do conceito de polimorfismo
+    void mover(int dx, int dy); //Método que faz o uso do conceito de polimorfismo
     void setCor(Cor cor);
     void setPreenchido(boolean preenchido);
     void setTamanho(int tamanho);
